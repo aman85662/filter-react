@@ -66,14 +66,14 @@ function App() {
         />
       </div>
       {searchtext ? 
-      <p>
+      <p className="text-center text-red-500">
         {filterUser.length === 0 ? "Oops! No result found" : `Search-User: ${filterUser.length}`}
       </p> : null}
      
-      <div className='flex justify-center'>
+      <div className='flex justify-center space-x-4'>
         <div>
-          <span>Filter By City</span>
-          <select value={filtercity} onChange={(e) => setfiltercity(e.target.value)}>
+          <span className="block text-gray-700">Filter By City</span>
+          <select value={filtercity} onChange={(e) => setfiltercity(e.target.value)} className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
             <option value="">All</option>
             { 
               User.map((user) => {
@@ -87,8 +87,8 @@ function App() {
           </select>
         </div>
         <div>
-          <span>Filter By Age</span>
-          <select value={filterage} onChange={(e) => setfilterage(e.target.value)}>
+          <span className="block text-gray-700">Filter By Age</span>
+          <select value={filterage} onChange={(e) => setfilterage(e.target.value)} className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
             <option value="">All</option>
             { 
               User.map((user) => {
@@ -102,15 +102,15 @@ function App() {
           </select>
         </div>
         <div>
-          <span>Sort By Name</span>
-          <select value={sortOrder} onChange={(e) => setsortOrder(e.target.value)}>
+          <span className="block text-gray-700">Sort By Name</span>
+          <select value={sortOrder} onChange={(e) => setsortOrder(e.target.value)} className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
             <option value="asc">Ascending</option>
             <option value="dsc">Descending</option>
           </select>
         </div>
       </div>
     
-      <div className='flex flex-wrap justify-around'>
+      <div className='flex flex-wrap justify-around mt-8'>
         {filterUser.map((userData) => {
           const { name, city, age, avatar } = userData;
 
